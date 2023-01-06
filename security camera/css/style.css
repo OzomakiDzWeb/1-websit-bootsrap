@@ -1,0 +1,219 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --dark-color:#120f2d;
+  --bleu-color: #2878eb;
+  --red-color: #f14d5d;
+  --section-color:#ffffff;
+  
+}
+body {
+  font-family: "Roboto", sans-serif;
+
+}
+h1{
+  font-weight: 700;
+}
+ul{
+  list-style: none;
+}
+/******** nav *********/
+.navbar .container a h1{
+  color: var(--bleu-color);
+}
+.navbar .container a span{
+  color: var(--red-color);
+}
+.navbar .container .collapse .navbar-nav .nav-item .nav-link{
+  color: black;
+  font-weight: 700;
+  position: relative;
+  margin-right: 15px;
+}
+.navbar .container .collapse .navbar-nav .nav-item .nav-link:hover{
+  color: var(--bleu-color);
+}
+.navbar .container .collapse .navbar-nav .nav-item .nav-link.active{
+  color: var(--bleu-color);
+
+}
+.navbar .container .collapse .navbar-nav .nav-item .nav-link.active::before{
+  width: 100%;
+}
+.navbar .container .collapse .navbar-nav .nav-item .nav-link::before{
+position: absolute;
+content: '';
+height: 2px;
+width: 0;
+bottom: 0;
+transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+background-color: var(--bleu-color);
+}
+.navbar .container .collapse .navbar-nav .nav-item .nav-link:hover::before{
+  width: 100%;
+}
+.btn{
+  background-color: var(--red-color);
+  color: #ffffff;
+  
+}
+.btn:hover{
+  transform: scale(1.1);
+  transition: 0.3s;
+  background-color: var(--bleu-color);
+}
+.navbar-toggler[aria-expanded="true"]{
+  color: var(--bleu-color);
+  background: var(--bleu-color);
+
+}
+/***********slid**********/
+.content{
+  position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(18, 15, 45, .5);
+    z-index: 1;
+    color: #ffffff;
+    width: 100%;
+    letter-spacing: 6px;
+}
+.anime{
+  animation: visil 2s ease-in;
+}
+@keyframes visil{
+  0%{
+    opacity: 0;
+    letter-spacing: 0;
+  }
+  100%{
+    opacity: 1;
+    letter-spacing: 6px;
+  }
+}
+
+.carousel-indicators .active {
+  background-color: var(--bleu-color);
+}
+@media (max-width:415px){
+  .buto{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .buto .btn{
+    font-size: 12px;
+    letter-spacing: 0;
+    margin-bottom: 1px;
+  }
+}
+/******** Service *********/
+.services .container .row .box{
+  position: relative;
+  cursor: pointer;
+  padding: 5px;
+}
+.services .container .row .box ::after{
+  position: absolute;
+  content: '';
+  width: 0%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.2;
+  z-index: -1;
+  background-color: var(--bleu-color);
+  transition: 0.4s;
+}
+.services .container .row .box:hover ::after{
+  width: 91%;
+}
+.services .container .row .box:hover{
+  color: #ffffff;
+}
+.services .container .row .box :first-child{
+  color: var(--red-color);
+  font-size: 25px;
+}
+/******** pricing *********/
+.pricing .container .row .itm{
+border: 1px solid var(--bleu-color);
+position: relative;
+text-align: center;
+margin-top: 5px;
+border-radius: 5px;
+}
+
+.pricing .container .row .itm .hed{
+  background-color: var(--bleu-color);
+  margin-top: 10px;
+  width: 100%;
+  color: #ffffff;
+}
+.pricing .container .row .itm button{
+  margin-bottom: 4px;
+}
+#sec{
+  position: relative;
+  color: #ffffff;
+}
+#sec *{
+  z-index: 2;
+}
+#sec::before{
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background-color: rgba(18, 15, 45, .5);
+}
+@media (max-width:344px){
+  .but{
+    display: flex;
+    flex-direction: column;
+  }
+  .btn{
+    margin-top: 2px;
+  }
+}
+/******** footer*********/
+footer{
+  background-color: #031b3d;
+  padding: 20px;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+footer a{
+  text-decoration: none;
+  color:#ffffff;
+}
+footer ul{
+  list-style: circle;
+  color: var(--red-color);
+}
+footer ul li{
+  color: #ffffff;
+}
+footer form{
+  width: 80%;
+  margin: auto;
+}
+footer form input{
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #ffffff;
+}
+/*******js******/
+.acti{
+  transition: opacity 1s ease;
+  opacity: 1;
+}
